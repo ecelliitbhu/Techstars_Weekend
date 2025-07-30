@@ -14,10 +14,15 @@ import { Card } from "@/components/ui/card"
 import { useToast } from "@/components/ui/use-toast"
 import { ToastAction } from "@/components/ui/toast"
 import {useRouter} from "next/navigation";
+//@ts-ignore
 import techstarsLogo from "@/public/assets/gswvaranasi.jpg";
+//@ts-ignore
 import ecell from "@/public/assets/iitbhulogo.png";
+//@ts-ignore
 import Image from "next/image";
+//@ts-ignore
 import comblogo1 from "@/public/assets/comblogo1.jpg";
+//@ts-ignore
 import comblogo2 from "@/public/assets/comblogo2.jpg";
 
 import {

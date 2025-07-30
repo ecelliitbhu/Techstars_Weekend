@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+//@ts-ignore
 import techstarsLogo from "@/public/Techstars_Logo_Primary_Black.png";
 import React from "react";
 

@@ -9,10 +9,15 @@ import Google from "@/public/assets/GoogleForStartups_Horizontal1.png";
 import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR1.png";
 //@ts-ignore
 import brex from "@/public/assets/BrexBlack.png";
+//@ts-ignore
 import merch from "@/public/assets/merch2.jpeg";
+//@ts-ignore
 import goodies from "@/public/assets/goodies.png";
+//@ts-ignore
 import godaddy from "@/public/assets/godaddy.png";
+//@ts-ignore
 import googlecloud from "@/public/assets/googlecloud.png";
+//@ts-ignore
 import ecell from "@/public/assets/iitbhulogo.png";
 import Image from "next/image";
 import Link from "next/link";

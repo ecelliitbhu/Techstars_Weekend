@@ -1,8 +1,8 @@
-import { NextAuthOptions } from "next-auth";
+//@ts-ignore
+import type { NextAuthOptions, User, Session } from "next-auth";
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
-import admin from "firebase-admin";
-import process from "process";
 import GoogleProvider from "next-auth/providers/google";
+import admin from "firebase-admin";
 import { db } from "./firebaseStore";
 import {
   collection,
@@ -13,16 +13,22 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
+import type { JWT } from "next-auth/jwt";
+
+
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+      clientEmail: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
+      privateKey: process.env.NEXT_PUBLIC_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+    }),
+  });
+}
 
 export const authOptions: NextAuthOptions = {
-  // @ts.ignore
-  // adapter: FirestoreAdapter({
-  //   credential: admin.credential.cert({
-  //     projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-  //     clientEmail: process.env.NEXT_PUBLIC_CLIENT_EMAIL,
-  //     privateKey: process.env.NEXT_PUBLIC_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-  //   }),
-  // }),
+  
+
   providers: [
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
@@ -31,16 +37,16 @@ export const authOptions: NextAuthOptions = {
   ],
 
   callbacks: {
-    async signIn({ user }) {
+    
+    async signIn({ user }: { user: User }) {
       try {
-        console.log(user);
-        if (!user.email) return false;
+        if (!user.email || !user.id) return false;
+
         const q = query(
           collection(db, "users"),
           where("email", "==", user.email)
         );
         const querySnapshot = await getDocs(q);
-        // console.log(querySnapshot);
 
         if (querySnapshot.empty) {
           await setDoc(doc(db, "users", user.id), {
@@ -49,7 +55,6 @@ export const authOptions: NextAuthOptions = {
           });
         } else {
           const userDoc = querySnapshot.docs[0];
-          console.log(userDoc);
           await updateDoc(doc(db, "users", user.id), {
             ...user,
             formFilled: userDoc.data().formFilled || false,
@@ -63,7 +68,14 @@ export const authOptions: NextAuthOptions = {
       }
     },
 
-    async jwt({ token, user }) {
+   
+    async jwt({
+      token,
+      user,
+    }: {
+      token: JWT;
+      user?: User;
+    }) {
       if (user) {
         token.id = user.id;
         token.email = user.email;
@@ -73,35 +85,31 @@ export const authOptions: NextAuthOptions = {
       return token;
     },
 
-    async session({ session, token }) {
+    
+    async session({
+      session,
+      token,
+    }: {
+      session: Session;
+      token: JWT;
+    }) {
       if (session.user) {
-        session.user.id = token.sub || "";
+        //@ts-ignore
+        session.user.id = token.sub || token.id || "";
       }
       return session;
     },
 
-    async redirect({ url, baseUrl }) {
+
+    async redirect({
+      url,
+      baseUrl,
+    }: {
+      url: string;
+      baseUrl: string;
+    }) {
       return baseUrl;
     },
   },
 };
 
-// import GoogleProvider from "next-auth/providers/google";
-// import { NextAuthOptions } from "next-auth";
-
-// export const authOptions: NextAuthOptions = {
-//   providers: [
-//     GoogleProvider({
-//       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
-//       clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET!,
-//     }),
-//   ],
-//   callbacks: {
-//     async session({ session, token }) {
-//       if (session.user) {
-//         session.user.id = token.sub;
-//       }
-//       return session;
-//     },
-//   },
-// };

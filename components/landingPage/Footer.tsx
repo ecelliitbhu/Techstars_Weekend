@@ -1,6 +1,8 @@
 import Image from "next/image"
 import React, {FunctionComponent} from "react";
+//@ts-ignore
 import ecell from "@/public/assets/iitbhulogo.png";
+//@ts-ignore
 import techstarsLogo from "@/public/Techstars_Logo_Primary_Black.png";
 import Link from "next/link";
 interface OwnProps {}
@@ -12,7 +14,7 @@ export const Footer: FunctionComponent<Props> = (props) => {
            <div className="m-4 md:flex justify-evenly flex-wrap">
             <div>
                 <div className="flex justify-center items-center">
-                    <a
+                <a
                 target={"_blank"}
                 href={"https://www.ecelliitbhu.com/"}
                 className=" lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
