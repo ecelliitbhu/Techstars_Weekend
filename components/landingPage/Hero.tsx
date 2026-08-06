@@ -124,7 +124,51 @@ const Hero: FunctionComponent<Props> = () => {
             </Button>
           </Link>
         </div>
-
+        <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
+          <span className="font-semibold text-2xl text-foreground uppercase">
+            What is Startup Weekend
+          </span>
+          <div className="mt-8 align-baseline">
+            <p className="font-medium text-md">
+              Learn how to think, work, and build like a startup in 54 thrilling
+              hours. <b>Techstars Startup Weekend </b>is an exciting and
+              immersive foray into the world of startups. Over an action-packed
+              three days, you’ll meet the very best mentors, investors,
+              co-founders and sponsors to show you how to get more done faster
+              and, ma ybe even start that Business.
+            </p>
+            {/*<a*/}
+            {/*  href="#"*/}
+            {/*  className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"*/}
+            {/*>*/}
+            {/*  <Image src={Google} alt={"Google"} height={200} width={200} />*/}
+            {/*</a>*/}
+            {/*<a*/}
+            {/*  href="#"*/}
+            {/*  className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 border-1"*/}
+            {/*>*/}
+            {/*  <Image*/}
+            {/*    src={gd}*/}
+            {/*    alt={"GD"}*/}
+            {/*    height={200}*/}
+            {/*    width={200}*/}
+            {/*    className={"p-4"}*/}
+            {/*  />*/}
+            {/*</a>*/}
+            {/*<a*/}
+            {/*  href="#"*/}
+            {/*  className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"*/}
+            {/*>*/}
+            {/*  <Image*/}
+            {/*    src={brex}*/}
+            {/*    alt={"Brex"}*/}
+            {/*    height={200}*/}
+            {/*    width={200}*/}
+            {/*    className={"p-4"}*/}
+            {/*  />*/}
+            {/*</a>*/}
+          </div>
+        </div>
         <div className="mt-20 mb-20 text-center lg:text-6xl font-extrabold sm:text-4xl text-3xl">
           <span>Benefits Of Startup Weekend</span>
         </div>
