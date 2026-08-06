@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Startup Weekend Varanasi",
-  description: "Google Startup Week in IIT BHU -8 Aug 2023",
+  description: "Google Startup Week in IIT BHU - 4-6 September 2026",
   keywords: [
     "Google Startup Week in IIT BHU",
     "gsw varanasi",
