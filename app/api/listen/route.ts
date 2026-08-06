@@ -5,7 +5,22 @@ import { db } from "@/lib/firebaseStore";
 export async function POST(request) {
   try {
     // Parse the JSON data sent by Townscript
-    const { userEmailId, uniqueOrderId } = await request.json();
+    const townscriptData = await request.json();
+    const { userEmailId, uniqueOrderId } = townscriptData;
+
+    // Forward all data to Google Apps Script webhook
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycby0rjPLJN9vW1aaJPw0eHJu70dECkQg_VWdLvGLHLkTGkGMHkUSMgeDchh_b7MpfiTA/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(townscriptData),
+      });
+      console.log("Data forwarded to Google Apps Script");
+    } catch (err) {
+      console.error("Error forwarding to Google Script:", err);
+    }
 
     // Query the users collection to find the document by email
     const q = query(
