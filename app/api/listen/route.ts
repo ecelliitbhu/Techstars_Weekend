@@ -16,6 +16,7 @@ export async function POST(request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(townscriptData),
+        redirect: "manual" // CRITICAL FIX: prevents Vercel from timing out
       });
       console.log("Data forwarded to Google Apps Script");
     } catch (err) {
