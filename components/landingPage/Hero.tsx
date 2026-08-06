@@ -135,7 +135,7 @@ const Hero: FunctionComponent<Props> = () => {
               immersive foray into the world of startups. Over an action-packed
               three days, you’ll meet the very best mentors, investors,
               co-founders and sponsors to show you how to get more done faster
-              and, ma ybe even start that Business.
+              and, maybe even start that Business.
             </p>
             {/*<a*/}
             {/*  href="#"*/}
