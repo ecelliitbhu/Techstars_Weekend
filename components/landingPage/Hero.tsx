@@ -22,7 +22,7 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
 
-interface OwnProps {}
+interface OwnProps { }
 
 type Props = OwnProps;
 
@@ -135,7 +135,7 @@ const Hero: FunctionComponent<Props> = () => {
               immersive foray into the world of startups. Over an action-packed
               three days, you’ll meet the very best mentors, investors,
               co-founders and sponsors to show you how to get more done faster
-              -- and, maybe even start that Business.
+              and, maybe even start that Business.
             </p>
             {/*<a*/}
             {/*  href="#"*/}
@@ -173,39 +173,39 @@ const Hero: FunctionComponent<Props> = () => {
           <span>Benefits Of Startup Weekend</span>
         </div>
         {/* First Row: Merch + Goodies */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mx-auto mb-8">
-  <div className="text-center flex flex-col items-center">
-    <div className="flex justify-center space-x-4">
-      <Image src={merch} alt="merchBack" className="w-40 h-40" />
-      <Image src={merch2} alt="merchFront" className="w-40 h-40" />
-    </div>
-    <p className="mt-4 text-xl font-semibold">Merchandise</p>
-  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mx-auto mb-8">
+          <div className="text-center flex flex-col items-center">
+            <div className="flex justify-center space-x-4">
+              <Image src={merch} alt="merchBack" className="w-40 h-40" />
+              <Image src={merch2} alt="merchFront" className="w-40 h-40" />
+            </div>
+            <p className="mt-4 text-xl font-semibold">Merchandise</p>
+          </div>
 
-  <div className="text-center flex flex-col items-center">
-    <Image src={goodies} alt="goodies" className="w-64 h-40 mx-auto" />
-    <p className="mt-4 text-xl font-semibold">Goodies</p>
-  </div>
+          <div className="text-center flex flex-col items-center">
+            <Image src={goodies} alt="goodies" className="w-64 h-40 mx-auto" />
+            <p className="mt-4 text-xl font-semibold">Goodies</p>
+          </div>
 
-  <div className="text-center flex flex-col items-center">
-    <Image
-      src={brex}
-      alt="brex"
-      className="-mt-4 lg:w-60 lg:h-28 md:h-14 sm:w-48 sm:h-8 w-32 h-10 mx-auto invert"
-    />
-    <p className="mt-4 text-xl font-semibold">Brex Rewards</p>
-  </div>
-</div>
+          <div className="text-center flex flex-col items-center">
+            <Image
+              src={brex}
+              alt="brex"
+              className="-mt-4 lg:w-60 lg:h-28 md:h-14 sm:w-48 sm:h-8 w-32 h-10 mx-auto invert"
+            />
+            <p className="mt-4 text-xl font-semibold">Brex Rewards</p>
+          </div>
+        </div>
 
 
-<div className="flex justify-center gap-10 px-4 mx-auto">
-  
+        <div className="flex justify-center gap-10 px-4 mx-auto">
 
-  <div className="text-center flex flex-col items-center">
-    <Image src={googlecloud} alt="googlecloud" className="w-48 h-32 mx-auto" />
-    <p className="mt-4 text-xl font-semibold">$300 Google Credits</p>
-  </div>
-</div>
+
+          <div className="text-center flex flex-col items-center">
+            <Image src={googlecloud} alt="googlecloud" className="w-48 h-32 mx-auto" />
+            <p className="mt-4 text-xl font-semibold">$300 Google Credits</p>
+          </div>
+        </div>
 
       </div>
     </section>
