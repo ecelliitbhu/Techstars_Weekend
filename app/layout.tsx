@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Startup Weekend Varanasi",
   description:
-    "Join us for the Google Startup Week in IIT BHU on 8th August 2023. Explore innovation, entrepreneurship, and technology in Varanasi.",
+    "Join us for the Google Startup Week in IIT BHU on 4-6 September 2026. Explore innovation, entrepreneurship, and technology in Varanasi.",
   keywords: [
     /* your keywords */
   ],
