@@ -9,8 +9,8 @@ import Google from "@/public/assets/GoogleForStartups_Horizontal1.png";
 import gd from "@/public/assets/GD_REGISTRY_POWERED_BY_LOCKUP_3_CMYK_COLOR1.png";
 //@ts-ignore
 import brex from "@/public/assets/BrexBlack.png";
-import merch from "@/public/assets/T-ShirtFront.png";
-import merch2 from "@/public/assets/T-ShirtBack.png";
+import merch from "@/public/assets/Images/gsw-2026/merch/merch_front.png";
+import merch2 from "@/public/assets/Images/gsw-2026/merch/merch_back.png";
 import goodies from "@/public/assets/goodies.png";
 import godaddy from "@/public/assets/godaddy.png";
 import googlecloud from "@/public/assets/googlecloud.png";
