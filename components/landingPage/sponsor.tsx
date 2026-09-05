@@ -18,6 +18,17 @@ import brex from "@/public/assets/BrexBlack.png"
 import deel from "@/public/assets/deel.png"
 
 // import ecell from "@/public/assets/iitbhulogo.png";
+// @ts-ignore
+import techstars from "@/public/assets/Images/gsw-2026/logo/techstars.jpeg"
+// @ts-ignore
+import onestop from "@/public/assets/Images/gsw-2026/logo/1stop.jpeg"
+// @ts-ignore
+import i3f from "@/public/assets/Images/gsw-2026/logo/i3f.jpeg"
+// @ts-ignore
+import idapt from "@/public/assets/Images/gsw-2026/logo/idapt.png"
+// @ts-ignore
+import ryfy from "@/public/assets/Images/gsw-2026/logo/ryfy_raftaar.png"
+
 
 const ListOfSponsor =[
     {
@@ -37,12 +48,39 @@ const ListOfSponsor =[
         src:deel,
         href:"https://www.deel.com/",
         alt:"deel"
-    }
+    },
     // {
     //     src:ecell,
     //     href:"https://www.ecelliitbhu.com/",
     //     alt:"ecell"
     // }
+
+    {
+        src: techstars,
+        href: "#",
+        alt: "techstars"
+    },
+    {
+        src: onestop,
+        href: "#",
+        alt: "1stop"
+    },
+    {
+        src: i3f,
+        href: "#",
+        alt: "i3f"
+    },
+    {
+        src: idapt,
+        href: "#",
+        alt: "idapt"
+    },
+    {
+        src: ryfy,
+        href: "#",
+        alt: "ryfy_raftaar"
+    }
+
 ]
 interface OwnProps {}
 
@@ -50,7 +88,7 @@ type Props = OwnProps;
 export const Sponsor: FunctionComponent<Props> = (props) => {
     return (
         <div  className="mt-7 max-w-screen">
-            <div className="font-semibold text-2xl text-foreground uppercase text-center mb-7">global sponsors</div>
+            <div className="font-semibold text-2xl text-foreground uppercase text-center mb-7">Our Partners</div>
             <div className="flex flex-wrap justify-center items-center" >
                 {
                     ListOfSponsor.map((data,index)=>
@@ -67,7 +105,8 @@ export const Sponsor: FunctionComponent<Props> = (props) => {
                                     width={250} 
                                     className={cn(
                                         "object-contain max-h-20 w-auto",
-                                        (data.alt === "brex" || data.alt === "deel") && "invert brightness-200"
+                                        (data.alt === "brex" || data.alt === "deel") && "invert brightness-200",
+                                        (data.alt === "idapt" || data.alt === "ryfy_raftaar") && "scale-[3]"
                                     )}
                                 />
                             </a>
